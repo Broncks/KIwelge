@@ -4,11 +4,30 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.metrics import confusion_matrix
-#jffjhhh
+import os
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import load_img
+#Erstmal den Datensatz herunterladen und in den repository links manuel hinzufügen
+'''
 url = "https://myshare.leuphana.de/?t=dde5dfe5773fb088bd895a74b49933ab"
 tf.keras.utils.get_file("For_model", url, cache_dir="dataset", extract=True)
-DIRECTORY = r"/Users/molly/PycharmProjects/Object Detection/Face-Mask-Detection-master/dataset25GB/For_model"
+'''
+DIRECTORY = r"Dataset"
+CATEGORIES = ["maskchin", "maskmouth", "maskoff", "maskon"]
 
+data = []
+labels = []
+
+for category in CATEGORIES:
+	path = os.path.join(DIRECTORY, category)
+	for img in os.listdir(path):
+		img_path = os.path.join(path, img)
+		image = load_img(img_path, target_size=(224, 224))
+		image = img_to_array(image)
+		image = preprocess_input(image)
+
+		data.append(image)
+		labels.append(category)
 """
 img_height, img_width = 224, 224
 batch_size = 32
