@@ -72,3 +72,4 @@ history = model.fit(train_data, epochs=10, validation_data=val_data)
 
 model.save("mask_detector_1.model", save_format="h5")
 
+#dhgsjdgh
