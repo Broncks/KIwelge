@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+N = 10 #zu der Anzahl der Epochen anpassen
+
 def plot_loss(history):
   plt.plot(np.arange(0, N), history.history['loss'], label='training loss')
   plt.plot(np.arange(0, N), history.history['val_loss'], label='validation loss')
@@ -9,6 +11,9 @@ def plot_loss(history):
   plt.ylabel('loss value')
   plt.legend()
   plt.show()
+
+plot_loss(history)
+plt.savefig("plotloss.png")
 
 def plot_accuracy(history):
   plt.plot(history.history['accuracy'], label='training accuracy')
@@ -19,9 +24,5 @@ def plot_accuracy(history):
   plt.legend()
   plt.show()
 
-plot_loss(history)
-plt.savefig("plotloss.png")
-
 plot_accuracy(history)
 plt.savefig("plotaccuracy.png")
-#
