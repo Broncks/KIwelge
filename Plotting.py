@@ -21,3 +21,4 @@ plt.savefig("plotloss.png")
 
 plot_accuracy(history)
 plt.savefig("plotaccuracy.png")
+#
