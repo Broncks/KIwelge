@@ -1,3 +1,4 @@
+import tensorflow as tf
 
 DIRECTORY = r"Dataset"
 CATEGORIES = ["maskchin", "maskmouth", "maskoff", "maskon"] #wahrscheinlich nicht nötig

@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 def plot_loss(history):
   plt.plot(np.arange(0, N), history.history['loss'], label='training loss')
   plt.plot(np.arange(0, N), history.history['val_loss'], label='validation loss')
